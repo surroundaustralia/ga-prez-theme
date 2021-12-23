@@ -32,6 +32,6 @@ systemInfo:
     title: null
     desc: null
 appName: ga
-deploymentMethod: docker # docker, kubernetes or ecs
+deploymentMethod: kubernetes # docker, kubernetes or ecs
 storageClass: ebs-sc # for kubernetes deployment
 version: 0.1.2

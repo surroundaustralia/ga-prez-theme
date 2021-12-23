@@ -1,0 +1,37 @@
+themeVolume: theme # no trailing slash
+sidenav: true
+enabledPrezs:
+  - VocPrez
+sparqlEndpoint: #{SPARQL_ENDPOINT}#
+sparqlUsername: #{SPARQL_USERNAME}#
+sparqlPassword: #{SPARQL_PASSWORD}#
+port: 8000
+demo: true
+debug: true
+searchEndpoints:
+  - name: GGIC VocPrez
+    url: http://ggic.surroundaustralia.com/sparql/
+  - name: GSQ VocPrez
+    url: http://gsq.surroundaustralia.com/sparql/
+systemUri: http://ga.surroundaustralia.com
+dataUri: http://ga.vocabs.ga.gov.au
+systemInfo:
+  Prez:
+    title: GA Vocabulary Register
+    desc: Vocabularies managed and published by Geoscience Australia.
+  VocPrez:
+    title: GA Vocabulary Register
+    desc: Vocabularies managed and published by Geoscience Australia.
+  CatPrez:
+    title: null
+    desc: null
+  TimePrez:
+    title: null
+    desc: null
+  SpacePrez:
+    title: null
+    desc: null
+appName: ga
+deploymentMethod: docker # docker, kubernetes or ecs
+storageClass: ebs-sc # for kubernetes deployment
+version: 0.1.2

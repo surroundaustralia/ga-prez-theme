@@ -5,15 +5,21 @@ import re
 import yaml
 
 # find & replace tokens for repo envs (sparql creds)
-SPARQL_ENDPOINT = os.environ.get("SPARQL_ENDPOINT", "")
-SPARQL_USERNAME = os.environ.get("SPARQL_USERNAME", "")
-SPARQL_PASSWORD = os.environ.get("SPARQL_PASSWORD", "")
+VOCPREZ_SPARQL_ENDPOINT = os.environ.get("VOCPREZ_SPARQL_ENDPOINT", "http://172.17.0.2:3030/surround-vocabs")
+VOCPREZ_SPARQL_USERNAME = os.environ.get("VOCPREZ_SPARQL_USERNAME", "")
+VOCPREZ_SPARQL_PASSWORD = os.environ.get("VOCPREZ_SPARQL_PASSWORD", "")
+SPACEPREZ_SPARQL_ENDPOINT = os.environ.get("SPACEPREZ_SPARQL_ENDPOINT", "http://172.17.0.2:3030/floods-2")
+SPACEPREZ_SPARQL_USERNAME = os.environ.get("SPACEPREZ_SPARQL_USERNAME", "")
+SPACEPREZ_SPARQL_PASSWORD = os.environ.get("SPACEPREZ_SPARQL_PASSWORD", "")
 
 with open("config.yaml", "r") as f:
     c = f.read()
-c = c.replace("#{SPARQL_ENDPOINT}#", SPARQL_ENDPOINT)
-c = c.replace("#{SPARQL_USERNAME}#", SPARQL_USERNAME)
-c = c.replace("#{SPARQL_PASSWORD}#", SPARQL_PASSWORD)
+c = c.replace("#{VOCPREZ_SPARQL_ENDPOINT}#", VOCPREZ_SPARQL_ENDPOINT)
+c = c.replace("#{VOCPREZ_SPARQL_USERNAME}#", VOCPREZ_SPARQL_USERNAME)
+c = c.replace("#{VOCPREZ_SPARQL_PASSWORD}#", VOCPREZ_SPARQL_PASSWORD)
+c = c.replace("#{SPACEPREZ_SPARQL_ENDPOINT}#", SPACEPREZ_SPARQL_ENDPOINT)
+c = c.replace("#{SPACEPREZ_SPARQL_USERNAME}#", SPACEPREZ_SPARQL_USERNAME)
+c = c.replace("#{SPACEPREZ_SPARQL_PASSWORD}#", SPACEPREZ_SPARQL_PASSWORD)
 
 # read config.yaml
 config = yaml.load(c, Loader=yaml.Loader)

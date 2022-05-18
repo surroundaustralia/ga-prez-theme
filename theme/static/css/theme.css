@@ -6,13 +6,16 @@
     --link-hover: var(--link);
     --btn: var(--primary);
     --btn-hover: #A33F1F;
+    --btn-active: #A33F1F;
+    --nav-bg: #ffffff;
+    --nav-hover: #003145;
     --header-bg: #ffffff;
     --footer-bg: #2f2f2f;
+    --card-bg: #efefef;
     --table-row-bg: #efefef;
 
     --title-color-primary: #2f2f2f;
     --title-color-secondary: #5e6a71;
-    --nav-hover-color: #003145;
     --border-color: #d8d8d8;
 
     /* sizing */
@@ -151,7 +154,7 @@ a.header-nav-link {
     font-size: 18px;
 }
 
-a.main-nav-item {
+.main-nav-item {
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
     border-bottom: 1px dotted var(--border-color);
     text-align: left;
@@ -159,9 +162,21 @@ a.main-nav-item {
     padding: 10px;
 }
 
-a.main-nav-item:not(.active):hover {
+.main-nav-item:not(.active):hover {
     border-color: transparent;
-    background-color: var(--nav-hover-color);
+    /* background-color: var(--nav-hover-color); */
+    color: white;
+}
+
+nav#sub-nav > a.sub-nav-item {
+    font-weight: normal;
+    border-bottom: 1px dotted var(--border-color);
+}
+
+.prez-item:hover > a,
+.prez-item:hover > button,
+nav#sub-nav > a.sub-nav-item:hover {
+    text-decoration: none;
     color: white;
 }
 

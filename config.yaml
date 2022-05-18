@@ -1,37 +1,32 @@
 themeVolume: theme # no trailing slash
 sidenav: true
 enabledPrezs:
-  - VocPrez
-sparqlEndpoint: #{SPARQL_ENDPOINT}#
-sparqlUsername: #{SPARQL_USERNAME}#
-sparqlPassword: #{SPARQL_PASSWORD}#
-port: 8000
+  - vocprez
+  - spaceprez
+vocprezSparqlEndpoint: #{VOCPREZ_SPARQL_ENDPOINT}#
+vocprezSparqlUsername: #{VOCPREZ_SPARQL_USERNAME}#
+vocprezSparqlPassword: #{VOCPREZ_SPARQL_PASSWORD}#
+spaceprezSparqlEndpoint: #{SPACEPREZ_SPARQL_ENDPOINT}#
+spaceprezSparqlUsername: #{SPACEPREZ_SPARQL_USERNAME}#
+spaceprezSparqlPassword: #{SPACEPREZ_SPARQL_PASSWORD}#
 demo: true
 debug: true
+allowPartialResults: true
 searchEndpoints:
-  - name: GGIC VocPrez
+  - name: GGIC vocprez
     url: http://ggic.surroundaustralia.com/sparql/
-  - name: GSQ VocPrez
+  - name: GSQ vocprez
     url: http://gsq.surroundaustralia.com/sparql/
 systemUri: http://ga.surroundaustralia.com
-dataUri: http://ga.vocabs.ga.gov.au
-systemInfo:
-  Prez:
-    title: GA Vocabulary Register
-    desc: Vocabularies managed and published by Geoscience Australia.
-  VocPrez:
-    title: GA Vocabulary Register
-    desc: Vocabularies managed and published by Geoscience Australia.
-  CatPrez:
-    title: null
-    desc: null
-  TimePrez:
-    title: null
-    desc: null
-  SpacePrez:
-    title: null
-    desc: null
+prezTitle: GA prez
+prezDesc: prez instance for Geoscience Australia.
+vocprezTitle: GA Vocabulary Register
+vocprezDesc: Vocabularies managed and published by Geoscience Australia.
+vocprezDataUri: http://exampledata.org
+spaceprezTitle: GA Spatial Data
+spaceprezDesc: Spatial data for Geoscience Australia.
+spaceprezDataUri: http://exampledata.org
 appName: ga
-deploymentMethod: kubernetes # docker, kubernetes or ecs
+deploymentMethod: docker # docker, kubernetes or ecs
 storageClass: ebs-sc # for kubernetes deployment
-version: 0.1.2
+version: latest

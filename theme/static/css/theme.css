@@ -270,6 +270,7 @@ table.alt-table tbody tr:nth-child(2n) {
 #status {
     display:block ;
     width: 100% ;
+    padding: 10px;
 }
 
 /* https://htmlcolorcodes.com/assets/downloads/flat-design-colors/flat-design-color-chart.png */

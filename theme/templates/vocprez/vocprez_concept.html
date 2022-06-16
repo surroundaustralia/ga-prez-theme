@@ -31,7 +31,16 @@
             Concept title
         {% endif %}
     </h1>
-    <div id="status" class="status-submitted" style="display:block; width:100%; padding:5px; background-color: #FCDDCC; border:solid 1px #DC7633; color:#D35400; font-weight:bold;"><a href="http://example.com/submitted">Status</a>: Submitted</div>
+
+    {% for prop in concept.properties %}
+        {% set uri_str = prop['value']|string() %}
+        {% if 'status' in uri_str %}
+            {% set status = prop['objects'][0]['value']|string()|replace("http://def.isotc211.org/iso19135/-1/2015/CoreModel/code/RE_ItemStatus/", "") %}
+            <div id="status" class="status-{{ status }}">Status: {{ status|title() }}</div>            
+        {% endif %}
+        <!--<p>Status: {{ prop }}</p>-->
+    {% endfor %}
+
     <p>Instance URI: <a href="{{ uri }}">{{ concept.uri }}</a> <small><a href="{{ concept.uri }}" target="_blank"><i class="far fa-external-link"></i></a></small></p>
     <p>Within scheme: <a href="{{ url_for('scheme_endpoint', scheme_id=concept.scheme.id) }}">{{ concept.scheme.title }}</a></p>    
     {% if concept.description is not none %}

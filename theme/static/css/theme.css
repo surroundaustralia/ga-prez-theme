@@ -266,3 +266,32 @@ table.alt-table tbody tr:nth-child(2n) {
         height: 100%;
     }
 }
+
+#status {
+    display:block ;
+    width: 100% ;
+}
+
+/* https://htmlcolorcodes.com/assets/downloads/flat-design-colors/flat-design-color-chart.png */
+.status-submitted {
+    background-color: #FCDDCC ;
+    border: solid 1px #DC7633 ;
+    color: #D35400; 
+    font-weight: bold;
+}
+
+.status-addition,
+.status-original,
+.status-valid {
+    background-color: #D4EFDF ;
+    border: solid 1px #7DCEA0 ;
+    color: #27AE60; 
+    font-weight: bold;
+}
+
+.status-retired {
+    background-color: #FADBD8 ;
+    border: solid 1px #F1948A ;
+    color: #E74C3C; 
+    font-weight: bold;
+}

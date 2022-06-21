@@ -4,19 +4,16 @@
 
 {% block content %}
 <div id="content-col-main">
-    <h1>Foundational Spatial Data Framework (FSDF) Data APIs</h1>
-    <p>The <a href="https://fsdf.org.au">FSDF Project</a> presents two types of Application Programming Interfaces (APIs) for it's content:</p>
-    <div class="card-container">
-        {% for prez in prezs %}
-            <div class="card">
-                <h3><a href="{{ url_for(prez | lower + '_home_endpoint') }}">{{ prez }}</a></h3>
-                {% if prez == "SpacePrez" %}
-                    <p>SpacePrez presents spatial data in various formats.</p>
-                {% elif prez == "VocPrez" %}
-                    <p>VocPrez presents vocabulary information, used to characterise (classify) spatial data.</p>
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>
+    <h1>Geoscience Australia Linked Data Register</h1>
+    <p>Welcome to Geoscience Australia's linked data register. This is a register of Geoscience Australia's linked data APIs. This tool is designed for semantic web spatial data.</p>
+    <h2>Datasets</h2>
+    <p>The following datasets are available through this register:</p>
+    <ul>
+        <li>Samples</li>
+        <li>Gravity Stations</li>
+    </ul>
+    <p>Other datasets will be added to the list on an ongoing basis.</p>
+    <h2>Search &amp; Querying</h2>
+    <p>Search within datasets is possible from the search page. Complex searches can be implemented using SPARQL queries in the SPARQL page.</p>
 </div>
 {% endblock %}
